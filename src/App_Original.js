@@ -1,4 +1,5 @@
 
+//import './App.css';
 import CompanyList from './companies/CompanyList';
 import React, { useState, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
@@ -8,26 +9,21 @@ import Routes_N from "./routes-nav/Routes_N";
 import LoadingSpinner from "./common/LoadingSpinner";
 import JoblyApi from "./api/api";
 import UserContext from "./auth/UserContext";
-import jwt from "jwt-decode";
-
-export const TOKEN_STORAGE_ID = "jobly-token";
+import jwt from "jsonwebtoken";
 
 function App() {
-
-  // let decoded = jwt_decode(token);
   const [infoLoaded, setInfoLoaded] = useState(false);
   const [applicationIds, setApplicationIds] = useState(new Set([]));
   const [currentUser, setCurrentUser] = useState(null);
  const [token, setToken] = useLocalStorage(TOKEN_STORAGE_ID);
-//  const [token, setToken] = useState(false);
-    console.debug(
+
+  console.debug(
       "App",
       "infoLoaded=", infoLoaded,
       "currentUser=", currentUser,
       "token=", token,
   );
 
-  
   // Load user info from API. Until a user is logged in and they have a token,
   // this should not run. It only needs to re-run when a user logs out, so
   // the value of the token is a dependency for this effect.
@@ -111,19 +107,10 @@ function App() {
 
   if (!infoLoaded) return <LoadingSpinner />;
   return (
-     <BrowserRouter>
-        <UserContext.Provider
-            value={{ currentUser, setCurrentUser, hasAppliedToJob, applyToJob }}>
-          <div className="App">
-            <Navigation logout={logout} />
-            <Routes_N login={login} signup={signup} />
-          </div>
-        </UserContext.Provider>
-     </BrowserRouter>
-
-
-
-
+    <div className="App">
+      <h1>Jobly App</h1>
+      <CompanyList />
+    </div>
   );
 }
 
