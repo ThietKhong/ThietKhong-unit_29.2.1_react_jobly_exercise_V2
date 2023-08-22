@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ThietKhong-unit_29.2.1_react_jobly_exercise_V2/static/css/main.b82102e6.css",
+    "main.js": "/ThietKhong-unit_29.2.1_react_jobly_exercise_V2/static/js/main.d6c41af7.js",
+    "index.html": "/ThietKhong-unit_29.2.1_react_jobly_exercise_V2/index.html",
+    "main.b82102e6.css.map": "/ThietKhong-unit_29.2.1_react_jobly_exercise_V2/static/css/main.b82102e6.css.map",
+    "main.d6c41af7.js.map": "/ThietKhong-unit_29.2.1_react_jobly_exercise_V2/static/js/main.d6c41af7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b82102e6.css",
+    "static/js/main.d6c41af7.js"
+  ]
+}
